@@ -1,6 +1,6 @@
 # Color Wheel - Palette Generator
 
-This project is a color palette generator that lets you select colors from a color wheel and generate harmonious color combinations.
+This project is a color palette generator that lets you select colors from a color wheel and generate harmonious color combinations. That I vibe coded
 
 ## Prerequisites
 
