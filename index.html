@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colour Wheel</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body class="min-h-full bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-100 font-sans flex items-center justify-center p-4">
+    <div class="w-full max-w-6xl mx-auto">
+      <h1 class="text-3xl md:text-4xl font-bold text-center mb-8 text-blue-800 dark:text-blue-400">
+        Color Palette Generator
+      </h1>
+      
+      <div class="flex flex-col lg:flex-row gap-8 items-start">
+        <!-- Color Wheel Container -->
+        <div class="relative mx-auto lg:mx-0 mb-4">
+          <canvas id="colour_wheel" width="800" height="800" class="max-w-full h-auto rounded-full shadow-lg cursor-pointer"></canvas>
+          <div id="rgb" class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-white/90 dark:bg-gray-800/90 rounded-lg px-5 py-3 shadow-lg flex justify-around w-4/5 max-w-xs"> 
+            <span id="r" class="font-mono">R: 0</span>
+            <span id="g" class="font-mono">G: 0</span>
+            <span id="b" class="font-mono">B: 0</span>
+          </div>
+        </div>
+        
+        <!-- Controls and Palette Section -->
+        <div class="lg:flex-1 w-full max-w-md mx-auto lg:mx-0 flex flex-col gap-6">
+          <!-- Harmony Selector -->
+          <div class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-md">
+            <label for="harmony-type" class="block mb-2 font-medium">Color Harmony:</label>
+            <select id="harmony-type" class="w-full px-4 py-2 rounded-md bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+              <option value="analogous">Analogous</option>
+              <option value="complementary">Complementary</option>
+              <option value="triadic">Triadic</option>
+              <option value="tetradic">Tetradic</option>
+              <option value="monochromatic">Monochromatic</option>
+            </select>
+          </div>
+          
+          <!-- Palette Display -->
+          <div class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-md">
+            <h2 class="text-lg font-semibold mb-3 pb-2 border-b border-gray-200 dark:border-gray-700">
+              Generated Palette
+            </h2>
+            <div id="color-palette" class="flex flex-row flex-nowrap gap-2 overflow-x-auto">
+
+              <!-- Color boxes will be inserted here -->
+            </div>
+          </div>
+          
+          <!-- Instructions -->
+          <div class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-md">
+            <p class="text-gray-600 dark:text-gray-300 text-sm">
+              Click on the color wheel to select a color and generate a palette. 
+              Choose different harmony types to explore color combinations.
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Footer -->
+      <footer class="mt-12 text-center text-gray-500 text-sm">
+        <p>Built with Tailwind CSS and TypeScript</p>
+      </footer>
+    </div>
+    
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
